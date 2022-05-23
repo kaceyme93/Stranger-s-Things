@@ -1,0 +1,158 @@
+body {
+    border: 0px;
+    margin-top: 75px;
+    padding: 0px;
+    background-image: url("https://cdn.pixabay.com/photo/2012/12/24/08/39/backdrop-72250__480.jpg");
+    /* background-color: beige; */
+    /* display: flex;
+    flex-direction: column; */
+}
+.app {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Flex', sans-serif;
+}
+.input-form {
+    display: flex;
+    justify-content: center;
+    align-self: bottom;
+    min-height: 100vh;
+}
+.register {
+    display: flex;
+    position: relative;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 200px;
+    padding: 10px;
+    background-image: url("https://media.istockphoto.com/photos/notebook-lined-paper-background-picture-id1011155254?k=20&m=1011155254&s=170667a&w=0&h=cw6u5k5FsoMt6DUs6uDFvBBXS5WwM7RR_xV3gJor7hI=");
+}
+.formDiv {
+    padding: 0px 0px 15px 0px ;
+}
+.create-title {
+    position: relative;
+    bottom: 4px;
+    left: 15px;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color:#157082 ;
+    padding: 5px 0px 5px 0px;
+    z-index: 99;
+}
+#logo {
+   height: 30px;
+   margin-left: 50px;
+}
+
+.link {
+    font-weight: bolder ;
+    color: beige;
+    margin-right: 10px;
+    font-size: 25px;
+    border-right: 1px solid white;
+    padding-right: 10px;
+}
+.link:last-child{
+    border-right: none;
+}
+.posts {
+    border: 1px solid black;
+    margin-top: 10px;
+    box-shadow: 5px, 5px, 5px gray;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: url("https://media.istockphoto.com/photos/notebook-lined-paper-background-picture-id1011155254?k=20&m=1011155254&s=170667a&w=0&h=cw6u5k5FsoMt6DUs6uDFvBBXS5WwM7RR_xV3gJor7hI=");
+}
+.post-title {
+    text-align: center;
+    font-weight: bolder;
+    position: relative;
+    bottom: 2px;
+}
+.post-desc, .price, .seller, .location, .isAuthor {
+    text-align: center ;
+    margin-left: 10px;
+}
+.post-desc {
+    position: relative;
+    top: 7px;
+}
+.price {
+    position: relative;
+    top: 15px;
+}
+.seller {
+    position: relative;
+    top: 20px;
+}
+.del-button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.mail-icon {
+    height: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.mail-icon:hover {
+    cursor: pointer;
+}
+.login {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.register {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.logout {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: beige; */
+    background-image: url("https://media.istockphoto.com/photos/notebook-lined-paper-background-picture-id1011155254?k=20&m=1011155254&s=170667a&w=0&h=cw6u5k5FsoMt6DUs6uDFvBBXS5WwM7RR_xV3gJor7hI=");
+}
+.logout-container {
+    display: flex;
+    justify-content: center;
+}
+.logout-button {
+    display: flex;
+    justify-content: center;
+}
+.create-post {
+    display: flex;
+    justify-content: center;
+}
+.isAuthor {
+    color: red;
+    position: relative;
+    top: 3px;
+}
+.tack {
+    height: 20px;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
