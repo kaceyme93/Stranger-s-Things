@@ -18,7 +18,6 @@ const login = (username, pwd, setToken) => {
         const token = result.data.token
         setToken(token)
         localStorage.setItem('token', token);
-        console.log(result);
       })
       .catch(console.error);
 }

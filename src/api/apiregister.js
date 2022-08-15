@@ -18,7 +18,6 @@ const register = (username, password, setToken) => {
         const token = result.data.token
         setToken(token)
         localStorage.setItem('token', token)
-        console.log("token is", token);
       })
       .catch(console.error);
     

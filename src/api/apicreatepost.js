@@ -1,5 +1,5 @@
 const BASE_URL= process.env.REACT_APP_BASEURL
-const token = localStorage.token
+const token = window.localStorage.token
 
 const apiCreatePost = (title, description, price, location, willDeliver) => {
     fetch(BASE_URL+"/posts", {

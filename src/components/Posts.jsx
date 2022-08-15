@@ -11,24 +11,21 @@ const Posts = ({userInfo}) => {
     const [content, setContent] = useState("")
     const fetchPosts = async () => {
         await getPosts(setPosts)
-        // setPosts(returnedData)
 
     }
     useEffect(() => {
         fetchPosts()
     },[token, fetchPosts])
-    // console.log("Post list is" +postList);
 
     const Delete = (postID) => {
         deletePost(postID)
     }
-    const sendMessage = async (event) => {
+    const sendMessage = async (postID) => {
         event.preventDefault()
-        const content = event.target.body.value
-        console.log("content is "+ content)
-        const postID = event.target.submit.className
-
-        apiMessage(postID, token, content)
+        const value = document.getElementById(postID).value
+        console.log(value)
+        
+        apiMessage(postID, token, value)
     }
     return (
         <div className="post-list">
@@ -50,11 +47,17 @@ const Posts = ({userInfo}) => {
                         {!post.isAuthor && token && (
                             <div className="message-form">
                                 <form
-                                onSubmit={sendMessage}
+                                onSubmit={(event) => {
+                                event.preventDefault()
+                                sendMessage(post._id)
+                            }}
                                 >
                                     <input
-                                        type="text"
-                                        placeholder="Type Message"
+                                        id={post._id}
+                                        type ="text"
+                                        // value={content}
+                                        // onChange={({target: {value}}) => setContent(value)}
+                                        placeholder="Username"
                                         required
                                         />
                                     
@@ -69,9 +72,7 @@ const Posts = ({userInfo}) => {
                         }
                     </div>
                 )
-            }       
-            
-            )}
+            })}
         </div>
     )
 

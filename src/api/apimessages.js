@@ -1,6 +1,7 @@
 const BASE_URL= process.env.REACT_APP_BASEURL
 
 const apiMessage = (POST_ID, token, content) => {
+    console.log(content)
     fetch(`${BASE_URL}/posts/${POST_ID}/messages`, {
         method: "POST",
         headers: {
@@ -9,7 +10,8 @@ const apiMessage = (POST_ID, token, content) => {
         },
         body: JSON.stringify({
             message: {
-            content
+
+            content: content
             }
         })
         }).then(response => response.json())
