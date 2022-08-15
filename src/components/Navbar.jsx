@@ -4,9 +4,11 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 const Navbar = ({userInfo, setterFuncts}) => {
     const token = userInfo.token
     const setToken = setterFuncts.setToken
-    
+    const setIsLoggedIn = setterFuncts.setIsLoggedIn
+
     const logout = () => {
         setToken("")
+        setIsLoggedIn(false)
         localStorage.removeItem('token', token)
     }
     // console.log("token iss", token)

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { getPosts } from '../api/index.js'
 import deletePost from '../api/deletepost.js'
-import sendMessage from '../api/apimessages.js'
+import apiMessage from '../api/apimessages.js'
 
 const Posts = ({userInfo}) => {
     // const posts= props.posts
     const token = userInfo.token
+    const isLoggedIn = userInfo.isLoggedIn
     const [postList, setPosts] = useState([])
     const [content, setContent] = useState("")
     const fetchPosts = async () => {
@@ -21,32 +22,13 @@ const Posts = ({userInfo}) => {
     const Delete = (postID) => {
         deletePost(postID)
     }
-    const messageForm = (postID) => {
-        return (
-            <aside> Hello!
-                {/* <form
-                onSubmit={(event) => {
-                    event.preventDefault()
-                    sendMessage(postID, content)
-                    setContent("")
-                }}
-                >
-                    <div className="form">
-                        <div className="send=mess">Send Message</div>
-                        <div className="formDiv">
-                            <input
-                            type="text"
-                            value={content}
-                            onChange={({target: {value}}) => setContent(value)}
-                            placeholder="Type Message Here"
-                            required
-                            />
-                        </div>
-                        <button type="submit">Submit Message</button>
-                    </div>
-                </form> */}
-            </aside>
-        )
+    const sendMessage = async (event) => {
+        event.preventDefault()
+        const content = event.target.body.value
+        console.log("content is "+ content)
+        const postID = event.target.submit.className
+
+        apiMessage(postID, token, content)
     }
     return (
         <div className="post-list">
@@ -65,10 +47,24 @@ const Posts = ({userInfo}) => {
                         {post.isAuthor && (
                             <button className="del-button" onClick={() =>Delete(post._id)}>Delete Post</button>
                         )}
-                        {!post.isAuthor && (
-                            <img className="mail-icon" src="https://www.pngkit.com/png/detail/11-119830_mail-icons-free-and-small-mail-icon-white.png"
-                            onClick={() => messageForm(post._id)}
-                            />
+                        {!post.isAuthor && token && (
+                            <div className="message-form">
+                                <form
+                                onSubmit={sendMessage}
+                                >
+                                    <input
+                                        type="text"
+                                        placeholder="Type Message"
+                                        required
+                                        />
+                                    
+                                    <button type="submit"
+                                    name="submit"
+                                    className={post._id}
+                                    >Submit Message</button>
+                                
+                                </form>
+                            </div>
                         )
                         }
                     </div>

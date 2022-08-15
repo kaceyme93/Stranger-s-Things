@@ -20,6 +20,7 @@ const Register = ({userInfo, setterFuncts}) => {
             onSubmit={(event) => {
                 event.preventDefault()
                 register(userName, password, setToken)
+                setIsLoggedIn(true)
                 history.push("/")
                 // console.log("Registration attempted")
 

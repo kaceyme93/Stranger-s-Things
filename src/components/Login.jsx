@@ -20,6 +20,7 @@ const Login = ({userInfo, setterFuncts}) => {
                 onSubmit={(event) => {
                     event.preventDefault()
                     login(userName, password, setToken)
+                    setIsLoggedIn(true)
                     // console.log("Login attempted")
                     setUserName("")
                     setPassword("")

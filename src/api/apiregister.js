@@ -21,26 +21,7 @@ const register = (username, password, setToken) => {
         console.log("token is", token);
       })
       .catch(console.error);
-    //   method: "POST",
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({
-    //     user: {
-    //       username: username,
-    //       password: pwd
-    //     }
-    //   })
-    // }).then(response => response.json())
-    //   .then(result => {
-    //     const token = result.data.token
-    //     console.log(result)
-    //     setToken(token)
-    //     localStorage.setItem('token', token);
-    //   })
-    //   .catch(console.error);
-    // console.log("Submitting ", username, pwd)
-    // const jwtResponse= "abc"
+    
 }
 
 export default register
