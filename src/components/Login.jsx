@@ -35,10 +35,10 @@ function Copyright(props) {
     let history = useHistory()
     const handleSubmit = (event) => {
         event.preventDefault()
-        login(userName, password, setToken)
+        login(userName, password, setToken, setUserName, setIsLoggedIn)
         setIsLoggedIn(true)
-        setUserName("")
-        setPassword("")
+        // setUserName("")
+        // setPassword("")
         setTimeout(() =>{localStorage.getItem("token")? history.push("/"):window.alert("Incorrect username and or password")}, 200)
     }
 

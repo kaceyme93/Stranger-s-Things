@@ -9,10 +9,11 @@ const Posts = ({userInfo}) => {
     const isLoggedIn = userInfo.isLoggedIn
     const [postList, setPosts] = useState([])
     const [content, setContent] = useState("")
+    const [searchTerm, setSearchTerm] = useState("")
     const fetchPosts = async () => {
         await getPosts(setPosts)
-
     }
+    
     useEffect(() => {
         fetchPosts()
     },[token, fetchPosts])
@@ -57,7 +58,7 @@ const Posts = ({userInfo}) => {
                                         type ="text"
                                         // value={content}
                                         // onChange={({target: {value}}) => setContent(value)}
-                                        placeholder="Username"
+                                        placeholder="Message"
                                         required
                                         />
                                     

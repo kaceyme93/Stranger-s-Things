@@ -1,7 +1,7 @@
 //This file will handle the login process and all associated API calls
 const BASE_URL= process.env.REACT_APP_BASEURL
 
-const login = (username, pwd, setToken) => {
+const login = (username, pwd, setToken, setUserName, setIsLoggedIn) => {
     fetch(BASE_URL+"/users/login", {
       method: "POST",
       headers: {
@@ -17,6 +17,8 @@ const login = (username, pwd, setToken) => {
       .then(result => {
         const token = result.data.token
         setToken(token)
+        setUserName(username)
+        setIsLoggedIn(true)
         localStorage.setItem('token', token);
       })
       .catch(console.error);

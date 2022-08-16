@@ -5,7 +5,8 @@ Posts,
 Register,
 Login,
 CreatePost,
-Navbar
+Navbar,
+Messages
 // 
 }from './components';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
@@ -52,6 +53,9 @@ const App = () => {
         </Route>
         <Route path="/create">
           <CreatePost userInfo={userInfo}/>
+        </Route>
+        <Route path="/me">
+          <Messages userInfo={userInfo} setterFuncts={setterFuncts} userName={userName}/>
         </Route>
       </div>
     </div>

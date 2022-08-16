@@ -29,7 +29,10 @@ const Navbar = ({userInfo, setterFuncts}) => {
                 )}
                 {!token && (
                     <Link className="link" to="/register">REGISTER</Link>
-            )} 
+                )} 
+                {token && (
+                    <Link className="link" to="/me">MESSAGES</Link>
+                )}
             </div>
       </div>
     )
