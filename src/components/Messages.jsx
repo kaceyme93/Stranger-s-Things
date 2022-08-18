@@ -6,19 +6,20 @@ import Paper from '@mui/material/Paper'
 
 const Messages = ({userName}) => {
     const [messages, setMessages] = useState([])
+    const username = localStorage.getItem('username')
+
+    console.log("USERNAME", username)
     const fetchMessages = async () => {
         await getUserInfo(setMessages)
     }
-    console.log("MESSAGES", messages)
-    console.log('USERNAME', userName)
     useEffect(() => {
         fetchMessages()
     }, [])
 
     return(
         <div className="message-list">
-            {messages && messages.map((message) => {
-                if (message.fromUser.username !== userName){
+            {messages.length >0? messages.map((message) => {
+                if (message.fromUser.username !== username){
                     return (
                         <Paper key={message._id} className="messages" elevation={3}>
                             <div className="message-info">
@@ -33,7 +34,7 @@ const Messages = ({userName}) => {
                         </Paper>
                     )
                 }
-            })}
+            }): <h1>Inbox Empty</h1>}
         </div>    
     )
 }

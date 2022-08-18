@@ -2,16 +2,14 @@ body {
     border: 0px;
     margin-top: 75px;
     padding: 0px;
-    background-image: url("https://cdn.pixabay.com/photo/2012/12/24/08/39/backdrop-72250__480.jpg");
-    /* background-color: beige; */
-    /* display: flex;
-    flex-direction: column; */
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Flex', sans-serif;
+    width: 100%;
 }
 .app {
     display: flex;
-    flex-direction: column;
-    font-family: 'Raleway', sans-serif;
-    font-family: 'Roboto Flex', sans-serif;
+    flex-direction: column;    
+    padding-top: 100px;
 }
 .input-form {
     display: flex;
@@ -49,10 +47,7 @@ body {
     background-color:#157082 ;
     padding: 5px 0px 5px 0px;
     z-index: 99;
-}
-#logo {
-   height: 30px;
-   margin-left: 50px;
+    margin-left: 0;
 }
 
 .link {
@@ -84,10 +79,12 @@ body {
 .post-desc, .price, .seller, .location, .isAuthor {
     text-align: center ;
     margin-left: 10px;
+    font-weight: bolder;
 }
 .post-desc {
     position: relative;
     top: 7px;
+    font-weight: bolder;
 }
 .price {
     position: relative;

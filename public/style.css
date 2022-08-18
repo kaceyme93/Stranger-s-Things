@@ -2,15 +2,11 @@ body {
     border: 0px;
     margin-top: 75px;
     padding: 0px;
-    /* background-image: url("https://cdn.pixabay.com/photo/2012/12/24/08/39/backdrop-72250__480.jpg"); */
-    /* display: flex;
-    flex-direction: column; */
 }
 .app {
     display: flex;
     flex-direction: column;
     font-family: 'Raleway', sans-serif;
-    font-family: 'Roboto Flex', sans-serif;
 }
 .input-form {
     display: flex;
@@ -43,11 +39,9 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
     align-content: center;
-    background-color:#157082 ;
-    padding: 5px 0px 5px 0px;
+    background-image: linear-gradient(to right,#668591, #74929c 25%);
+    padding: 10px 0px 10px 0px;
     z-index: 99;
 }
 #logo {
@@ -57,7 +51,8 @@ body {
 
 .link {
     font-weight: bolder ;
-    color: beige;
+    /* color: beige; */
+    color: black;
     margin-right: 10px;
     font-size: 25px;
     border-right: 1px solid white;
@@ -67,9 +62,9 @@ body {
     border-right: none;
 }
 .post-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    margin: auto;
+    width: 50%;
+    margin-top: 5rem;
 }
 .posts {
     border: 1px solid black;
@@ -78,7 +73,8 @@ body {
     border-radius: 5px;
     margin-left: 10px;
     margin-right: 10px;
-    background-image: url("https://media.istockphoto.com/photos/notebook-lined-paper-background-picture-id1011155254?k=20&m=1011155254&s=170667a&w=0&h=cw6u5k5FsoMt6DUs6uDFvBBXS5WwM7RR_xV3gJor7hI=");
+    /* background-image: url("https://media.istockphoto.com/photos/notebook-lined-paper-background-picture-id1011155254?k=20&m=1011155254&s=170667a&w=0&h=cw6u5k5FsoMt6DUs6uDFvBBXS5WwM7RR_xV3gJor7hI="); */
+    align-items: center;
 }
 .post-title {
     text-align: center;
@@ -89,6 +85,7 @@ body {
 .post-desc, .price, .seller, .location, .isAuthor {
     text-align: center ;
     margin-left: 10px;
+    font-weight: bolder;
 }
 .post-desc {
     position: relative;
@@ -133,8 +130,6 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    /* background-color: beige; */
-    background-image: url("https://media.istockphoto.com/photos/notebook-lined-paper-background-picture-id1011155254?k=20&m=1011155254&s=170667a&w=0&h=cw6u5k5FsoMt6DUs6uDFvBBXS5WwM7RR_xV3gJor7hI=");
 }
 .logout-container {
     display: flex;
@@ -165,6 +160,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 100px;
 }
 
 .messages{
@@ -175,4 +171,23 @@ body {
 
 .message-info{
     padding: .2rem;
+    font-weight: bolder;
+}
+
+.links{
+    display: flex;
+    justify-content: end;
+}
+
+.post-message-input{
+    height: 2.3rem;
+    margin-bottom: .5rem;
+}
+
+.logo{
+    position: fixed;
+    top: 5px;
+    left: 100px;
+    height: 45px;
+    box-shadow: 15px 15px 100px 100px #6a8995 inset;
 }

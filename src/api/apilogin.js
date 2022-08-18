@@ -17,9 +17,9 @@ const login = (username, pwd, setToken, setUserName, setIsLoggedIn) => {
       .then(result => {
         const token = result.data.token
         setToken(token)
-        setUserName(username)
         setIsLoggedIn(true)
         localStorage.setItem('token', token);
+        localStorage.setItem('username', username)
       })
       .catch(console.error);
 }

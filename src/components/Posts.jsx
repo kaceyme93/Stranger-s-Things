@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { getPosts } from '../api/index.js'
 import deletePost from '../api/deletepost.js'
 import apiMessage from '../api/apimessages.js'
+import Button from '@mui/material/Button';
 
 const Posts = ({userInfo}) => {
-    // const posts= props.posts
     const token = userInfo.token
     const isLoggedIn = userInfo.isLoggedIn
     const [postList, setPosts] = useState([])
-    const [content, setContent] = useState("")
-    const [searchTerm, setSearchTerm] = useState("")
     const fetchPosts = async () => {
         await getPosts(setPosts)
     }
@@ -28,12 +26,12 @@ const Posts = ({userInfo}) => {
         
         apiMessage(postID, token, value)
     }
+
     return (
         <div className="post-list">
             {postList && postList.map((post) => {
                 return (
                     <div key={post._id} className="posts"> 
-                    <img className="tack" src="https://www.clipartmax.com/png/small/13-130494_thumbtack-board-pin-clipart-clipartfest-push-pin-png.png" alt="Thumbtack Board Pin Clipart Clipartfest - Push Pin Png @clipartmax.com"/>
                         <h1 className="post-title">{post.title}</h1>
                         <div className="post-desc">{post.description}</div>
                         <div className="price">Price: {post.price}</div>
@@ -43,7 +41,7 @@ const Posts = ({userInfo}) => {
                         <div className="isAuthor">Author</div>
                         )}
                         {post.isAuthor && (
-                            <button className="del-button" onClick={() =>Delete(post._id)}>Delete Post</button>
+                            <Button className="del-button" onClick={() =>Delete(post._id)} variant="contained" color="error">Delete Post</Button>
                         )}
                         {!post.isAuthor && token && (
                             <div className="message-form">
@@ -53,20 +51,21 @@ const Posts = ({userInfo}) => {
                                 sendMessage(post._id)
                             }}
                                 >
-                                    <input
-                                        id={post._id}
-                                        type ="text"
-                                        // value={content}
-                                        // onChange={({target: {value}}) => setContent(value)}
-                                        placeholder="Message"
-                                        required
-                                        />
-                                    
-                                    <button type="submit"
-                                    name="submit"
-                                    className={post._id}
-                                    >Submit Message</button>
+                                <input className="post-message-input"
+                                    id={post._id}
+                                    type ="text"
+                                    size="small"
+                                    variant="outlined"
+                                    backgroundColor="white"
+                                    placeholder="Type Message"
+                                    required
+                                    />
                                 
+                                <Button type="submit"
+                                variant="contained"
+                                name="submit"
+                                className={post._id}
+                                >Send Message</Button>
                                 </form>
                             </div>
                         )

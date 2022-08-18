@@ -11,7 +11,6 @@ Messages
 }from './components';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
-
 const App = () => {
   const [token, setToken] = useState("")
   const [isLoggedIn, setIsLoggedIn] = useState(false)
